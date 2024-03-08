@@ -1,0 +1,137 @@
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.datadisplay {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 1.2em;
+}
+
+#player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(90vh);
+
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+
+    transition:
+        width 0.8s cubic-bezier(0.6, -0.28, 0.35, 1.42),
+        height 0.8s cubic-bezier(0.6, -0.28, 0.35, 1.42);
+}
+
+.obstacle {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #ff9595;
+    border-radius: 0.25rem;
+
+    transition:
+        width 0.8s cubic-bezier(0.6, -0.28, 0.35, 1.42),
+        height 0.8s cubic-bezier(0.6, -0.28, 0.35, 1.42);
+}
+
+#filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 5;
+    transition: 300ms;
+}
+
+#gameover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: 300ms;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #ff0000;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 10;
+    font-size: 2rem;
+}
+
+#finalScore {
+    font-size: 2.3rem;
+}
+
+@keyframes invincible {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotateColours {
+    0% {
+        -webkit-backdrop-filter: hue-rotate(0deg);
+        backdrop-filter: hue-rotate(0deg);
+    }
+    50% {
+        -webkit-backdrop-filter: hue-rotate(180deg);
+        backdrop-filter: hue-rotate(180deg);
+    }
+    100% {
+        -webkit-backdrop-filter: hue-rotate(360deg);
+        backdrop-filter: hue-rotate(360deg);
+    }
+}
+
+body {
+    transition: 300ms;
+}
+
+#vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+.vignette-black {
+    box-shadow: 0 0 300px rgba(0, 0, 0, 0.9) inset;
+}
+.vignette-red {
+    box-shadow: 0 0 200px rgba(255, 0, 0, 1) inset;
+}

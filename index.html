@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drizzly</title>
+        <script src="game.js" defer></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="roboto-regular">
+        <div style="display: flex; justify-content: space-between">
+            <div class="datadisplay">
+                time:
+                <div id="time">0</div>
+            </div>
+            <div class="datadisplay">
+                score:
+                <div id="score">0</div>
+            </div>
+        </div>
+
+        <div id="player"></div>
+        <div id="filter"></div>
+        <div id="gameover">
+            <h1>Game Over</h1>
+            <div id="finalScore"></div>
+            Click to restart.
+        </div>
+
+        <div id="vignette"></div>
+    </body>
+</html>

@@ -203,7 +203,7 @@ function initialise() {
   document.documentElement.style.cursor = "none";
   player.style.animation = ".5s linear 0s 10 running invincible";
 
-  randomEffectInterval = setInterval(randomEffect, 15000);
+  randomEffectInterval = setInterval(randomEffect, 27000);
   randomEffect();
 }
 

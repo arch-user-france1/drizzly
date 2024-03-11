@@ -5,7 +5,7 @@ let score = 0;
 let invincible = true;
 let gameFinished = false;
 let scoreUpdateInterval;
-let speedMultiplicator = window.innerHeight / 515;
+let speedMultiplicator = ((2 / 3) * window.innerHeight) / 515 + 0.2;
 const obstacleAmount = Math.floor(window.innerWidth / 120);
 
 function triggerVincible() {

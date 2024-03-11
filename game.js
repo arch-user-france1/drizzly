@@ -5,6 +5,9 @@ let score = 0;
 let invincible = true;
 let gameFinished = false;
 let scoreUpdateInterval;
+let speedMultiplicator =
+  ((window.innerHeight / 515) * window.innerHeight) / 515; // too easy to play on large screens
+const obstacleAmount = Math.floor((15 * window.innerHeight) / 515);
 
 function triggerVincible() {
   invincible = false;
@@ -33,7 +36,6 @@ function updatePlayerPosition(event) {
 let obstacles = [];
 
 function createObstacles() {
-  const obstacleAmount = 15;
   for (let i = 0; i < obstacleAmount; i++) {
     const obstacle = document.createElement("div");
     obstacle.className = "obstacle";
@@ -51,7 +53,7 @@ function animationStep() {
   for (const obstacle of obstacles) {
     const obstacleBoundingRect = obstacle[0].getBoundingClientRect();
     const element = obstacle[0];
-    obstacle[2] += 2 + time / 2000;
+    obstacle[2] += (2 + time / 2000) * speedMultiplicator;
     element.style.transform =
       "translate(" + obstacle[1] + "px, " + obstacle[2] + "px)";
 
@@ -90,14 +92,14 @@ function magnet() {
     const x = obstacle[1];
     const y = obstacle[2];
     if (x > playerBoundingRect.x) {
-      obstacle[1] -= 1;
+      obstacle[1] -= speedMultiplicator;
     } else if (x < playerBoundingRect.x) {
-      obstacle[1] += 1;
+      obstacle[1] += speedMultiplicator;
     }
     if (y > playerBoundingRect.y) {
-      obstacle[2] -= 1;
+      obstacle[2] -= speedMultiplicator;
     } else if (y < playerBoundingRect.y) {
-      obstacle[2] += 1;
+      obstacle[2] += speedMultiplicator;
     }
   }
 }

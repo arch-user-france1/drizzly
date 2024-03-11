@@ -5,10 +5,8 @@ let score = 0;
 let invincible = true;
 let gameFinished = false;
 let scoreUpdateInterval;
-let speedMultiplicator =
-  ((window.innerHeight / 515) * window.innerHeight) / 515; // too easy to play on large screens
-const obstacleAmount =
-  (Math.floor((15 * window.innerHeight) / 515) + speedMultiplicator) / 2;
+let speedMultiplicator = window.innerHeight / 515;
+const obstacleAmount = Math.floor(window.innerWidth / 120);
 
 function triggerVincible() {
   invincible = false;
